@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  asr-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: asr-service
+    ports:
+      - "9999:9999"
+    environment:
+      # 服务配置
+      - HOST=0.0.0.0
+      - PORT=9999
+      
+      # 日志配置
+      - LOG_LEVEL=INFO
+      
+      # FunASR 配置
+      - MODEL_NAME=paraformer-zh-streaming
+      - MODEL_REVISION=v2.0.4
+      - DEVICE=cpu
+      
+      # WebSocket 配置
+      - MAX_CONNECTIONS=20
+      - WS_TIMEOUT=300
+      
+      # CPU 线程优化
+      - TORCH_NUM_THREADS=4
+      - OMP_NUM_THREADS=4
+      - MKL_NUM_THREADS=4
+    
+    volumes:
+      # 持久化模型缓存
+      - ./models:/root/.cache/modelscope
+      # 持久化日志
+      - ./logs:/app/logs
+    
+    restart: unless-stopped
+    
+    # 资源限制（根据服务器配置调整）
+    deploy:
+      resources:
+        limits:
+          cpus: '4'        # CPU核心数限制
+          memory: 8G       # 内存限制（推荐8GB以上）
+        reservations:
+          cpus: '2'        # 预留CPU核心数
+          memory: 4G       # 预留内存
+    
+    # 健康检查
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:9999/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
