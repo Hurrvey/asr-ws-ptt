@@ -18,7 +18,7 @@
 
 ---
 
-## 📖 Table of Contents
+##  Table of Contents
 
 - [Introduction](#introduction)
 - [Features](#features)
@@ -45,20 +45,20 @@
 
 This project is a high-performance real-time speech transcription backend service based on Alibaba DAMO Academy's open-source [FunASR](https://github.com/modelscope/FunASR) engine. It adopts PTT (Push-to-Talk) mode and implements low-latency bidirectional communication through WebSocket protocol, specifically designed for real-time speech recognition scenarios.
 
-### 🎯 Core Advantages
+###  Core Advantages
 
-- **🚀 Fast Response**: Model resides in memory, recognition latency < 1000ms (CPU environment)
-- **💡 Smart Control**: PTT mode for precise control, on-demand recognition, resource-saving
-- **🔧 Easy Deployment**: Pure CPU environment, supports Docker one-click deployment
-- **📊 Production Ready**: Supports load balancing, health checks, detailed logging
-- **🌐 Standard Protocol**: Based on WebSocket, easy to integrate with various frontends
-- **🎨 Out-of-the-Box**: Provides test page for quick functionality verification
+- ** Fast Response**: Model resides in memory, recognition latency < 1000ms (CPU environment)
+- ** Smart Control**: PTT mode for precise control, on-demand recognition, resource-saving
+- ** Easy Deployment**: Pure CPU environment, supports Docker one-click deployment
+- ** Production Ready**: Supports load balancing, health checks, detailed logging
+- ** Standard Protocol**: Based on WebSocket, easy to integrate with various frontends
+- ** Out-of-the-Box**: Provides test page for quick functionality verification
 
 ---
 
 ## Features
 
-### ✨ Core Features
+###  Core Features
 
 | Feature | Description | Status |
 |---------|-------------|--------|
@@ -78,13 +78,13 @@ This project is a high-performance real-time speech transcription backend servic
   - `/stats` - Statistics
   - `/test` - Test page
 
-### 📦 Deployment Methods
+###  Deployment Methods
 
-- ✅ **Direct Deployment**: Python virtual environment, suitable for development and debugging
-- ✅ **Docker Deployment**: Containerized deployment, suitable for production
-- ✅ **One-Click Deployment**: Windows/Linux scripts, zero-configuration startup
+-  **Direct Deployment**: Python virtual environment, suitable for development and debugging
+-  **Docker Deployment**: Containerized deployment, suitable for production
+-  **One-Click Deployment**: Windows/Linux scripts, zero-configuration startup
 
-### 🎯 Supported Audio Formats
+###  Supported Audio Formats
 
 | Parameter | Value |
 |-----------|-------|
@@ -106,7 +106,7 @@ http://localhost:9999/test
 
 ![Test Page Example](./docs/images/demo.png)
 
-> 📝 **Note**: The test page provides complete WebSocket interaction examples, including connection management, control command sending, message receiving, etc.
+>  **Note**: The test page provides complete WebSocket interaction examples, including connection management, control command sending, message receiving, etc.
 
 ---
 
@@ -580,26 +580,26 @@ See [Deployment Documentation](./部署文档.md) for details (Chinese)
 ### v2.1.0 (2024-10-28)
 
 #### Added
-- ✨ Windows one-click deployment script
-- ✨ Complete testing toolkit
-- ✨ Detailed usage documentation
+-  Windows one-click deployment script
+-  Complete testing toolkit
+-  Detailed usage documentation
 
 #### Optimized
-- 🔧 Optimized for pure CPU deployment solution
-- 🔧 Docker image uses Alibaba Cloud sources
-- 🔧 Step-by-step PyTorch installation to avoid version conflicts
-- 🔧 All scripts automatically switch to correct directory
+-  Optimized for pure CPU deployment solution
+-  Docker image uses Alibaba Cloud sources
+-  Step-by-step PyTorch installation to avoid version conflicts
+-  All scripts automatically switch to correct directory
 
 #### Fixed
-- 🐛 Fixed Docker deployment path issues
-- 🐛 Fixed batch script directory switching issues
+-  Fixed Docker deployment path issues
+-  Fixed batch script directory switching issues
 
 ### v2.0.0 (2024-10-28)
 
-- 🎉 First release
-- ✨ PTT mode support
-- ✨ WebSocket real-time communication
-- ✨ Docker deployment support
+-  First release
+-  PTT mode support
+-  WebSocket real-time communication
+-  Docker deployment support
 
 ---
 
